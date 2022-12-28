@@ -1,4 +1,7 @@
-//practical 1:Students database
+//Personnel information system using constructor, destructor,
+static member functions, friend class, this pointer, inline code
+and dynamic memory allocation.
+
 #include<iostream>
 using namespace std;
 
