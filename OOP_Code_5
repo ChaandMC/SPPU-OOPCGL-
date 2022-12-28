@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+int n;
+// #define size 10
+template<class T>
+void selection_sort(T A[10])
+{
+int i, j, min;
+T temp;
+for(i=0 ; i<n-1 ; i++)
+{
+min = i;
+for(j=i+1 ; j<n ; j++)
+{
+if(A[j] < A[min])
+min = j;
+}
+temp = A[i];
+A[i] = A[min];
+A[min] = temp;
+}
+cout << "\nSorted List : ";
+for(i=0 ; i<n ; i++)
+{
+cout << " " << A[i];
+}
+}
+int main()
+{
+int A[10];
+float B[10];
+int i;
+cout << "\nEnter Total Number Of Integer Elements : ";
+cin >> n;
+cout << "\nEnter Integer Elements : ";
+for(i=0 ; i<n ; i++)
+{
+cin >> A[i];
+}
+selection_sort(A);
+cout << endl;
+cout << "\nEnter Total Number of Float Elements : ";
+cin >> n;
+cout << "\nEnter Float Elements : ";
+for(i=0 ; i<n ; i++)
+{
+cin >> B[i];
+}
+selection_sort(B);
+cout << endl;
+return 0;
+}
