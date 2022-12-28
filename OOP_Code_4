@@ -1,0 +1,48 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+class Student
+{
+char name[30];
+int roll_no;
+public: void
+accept()
+{
+cout << "\nName : ";
+cin >> name;
+cout << "Roll_No : ";
+cin >> roll_no;
+}
+void display()
+{
+cout << "\n Name : " << name;
+cout << "\n Roll_No : " << roll_no;
+cout << endl;
+cout << "------------------------";
+}
+};
+int main()
+{
+Student obj[10];
+fstream f;
+int i,n;f.open("Student.txt");
+cout << "\nHow many student information do you need to store? " << endl;
+cin >> n;
+cout << "\nEnter information of student in this format( NAME / ROLL_NO)";
+for(i=0; i<n; i++)
+{
+cout << "\nEnter information of student_" << i+1 << " : ";
+obj[i].accept();
+f.write((char*)&obj[i],sizeof obj[i]);
+}
+f.close();
+f.open("Student.txt",ios::in);
+cout<<"\nInformation of students is as follows : " << endl;
+for(i=0; i<n; i++)
+{
+f.write((char*)&obj[i],sizeof obj[i]);
+obj[i].display(); cout << endl;
+}
+f.close();
+return 0;
+}
