@@ -1,3 +1,7 @@
+//Creating a class which uses the concept of inheritance, displays data and data
+members and uses the concept of exception handling.
+
+
 #include<iostream>
 using namespace std;
 
