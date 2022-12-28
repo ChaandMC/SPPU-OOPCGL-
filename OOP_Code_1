@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+class complex
+{
+public:
+int real, img;
+//creat a constructor
+complex(int tempreal=0,int tempimag=0)
+{
+real=tempreal;
+img=tempimag;
+}
+//defining addcomp() method
+complex addComp(complex C1,complex C2)
+{
+//creating temporary variable
+complex temp;
+//Adding two real numbers
+temp.real = C1.real + C2.real;
+//adding two imaginary numbers
+temp.img = C1.img +C2.img;
+return temp;
+}
+//Defing mulcom() method
+complex mulComp(complex C1, complex C2)
+{
+//creating temporary variable
+complex temp1;
+//Multiplication of two real number
+temp1.real = C1.real * C2.real;
+//Multiplication of two imaginary number
+temp1.img = C1.img * C2.img;
+return temp1;
+}
+};
+int main()
+{
+// First Complex number
+complex C1;
+C1.real;
+C1.img;
+cout<<"Enter First real part of complex number :";
+cin>> C1.real;
+cout<<"Enter First img part of complex number :";
+cin>>C1.img;
+// printing first complex number
+cout<<"First Complex number is : "<< C1.real
+<< " + i"<< C1.img<<endl;
+// Second Complex number
+complex C2;
+C2.real;
+C2.img;
+cout<<"Enter Second real part of Complex number:";
+cin>>C2.real;
+cout<<"Enter Second img part of Complex number: ";
+cin>>C2.img;
+// printing second complex number
+cout<<"Second Complex number is : "<< C2.real
+<< " + i"<< C2.img<<endl;
+// for Storing the sum
+complex C3;
+// calling addComp() method
+C3 = C3.addComp(C1, C2);
+// printing the sum
+cout<<"Sum of complex number : " << C3.real << " + i"
+<< C3.img<<endl;
+complex C4;
+//calling mulcomp() method
+C4 =C4.mulComp(C1,C2);
+cout<<"Multiplication of Complex number is :"<<C4.real<<" + i"<<C4.img;
+return 0;
+}
